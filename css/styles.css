@@ -15,6 +15,7 @@
   --background-color-active-button: #188ce8;
   --background-color-footer: #2f303a;
   --background-color-hero: #2f303a;
+  --icon-color: #afb1b8;
 }
 html {
   box-sizing: border-box;
@@ -140,6 +141,7 @@ body {
   display: block;
 }
 .menu-contacts .contact-link {
+  display: flex;
   padding-top: 32px;
   padding-bottom: 32px;
   font-weight: 500;
@@ -164,7 +166,11 @@ body {
   padding-top: 200px;
   padding-bottom: 200px;
   background-color: var(--background-color-hero);
-  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero/bg.jpg);
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/hero/bg.jpg);
   background-size: cover;
 }
 
@@ -309,16 +315,14 @@ body {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background-color: var(--hero-color)
+  background-color: var(--hero-color);
 }
 .social-list-link:hover,
 .social-list-link:focus {
   background-color: var(--accent-color);
 }
 .social-list-icon {
-  width: 20px;
-  height: 20px;
-  fill: #AFB1B8;
+  fill: var(--icon-color);
 }
 .social-list-link:hover .social-list-icon,
 .social-list-link:focus .social-list-icon {
@@ -327,51 +331,37 @@ body {
 /* Client */
 .section-client-title {
   padding-bottom: 50px;
-font-style: normal;
-font-weight: 700;
-font-size: 36px;
-line-height: 1.17;
-text-align: center;
-color: var(--title-text-color)
-
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  color: var(--title-text-color);
 }
 .section-client-list {
   display: flex;
   gap: 30px;
-  
 }
 .section-client-item {
-  display: flex;
   width: 170px;
   height: 92px;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #AFB1B8;
-border-radius: 4px;
-}
-.client-icon {
-  fill: #AFB1B8; 
 }
 .client-link {
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-right: 32px;
-  padding-left: 32px; 
-  color: #AFB1B8; 
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--icon-color);
+  border-radius: 4px;
+  color: var(--icon-color);
   fill: currentColor;
 }
 .client-link:hover,
 .client-link:focus {
   color: var(--accent-color);
-}
-
-
-/* .client-link:hover .client-icon
-.client-link:focus .client-icon {
-  fill
-  : var(--accent-color);
   border-color: var(--accent-color);
-} */
+}
 
 /* footer */
 .page-footer {
@@ -419,6 +409,42 @@ border-radius: 4px;
 .footer-contact-link:focus {
   color: var(--accent-color);
 }
+.page-container {
+  margin-right: 70px;
+}
+.footer-container {
+  display: flex;
+  align-items: baseline;
+}
+.footer-social-title {
+  margin-bottom: 20px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: var(--hero-color);
+}
+.footer-social-list {
+  display: flex;
+  column-gap: 10px;
+}
+.footer-social-list-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.footer-social-list-link:hover,
+.footer-social-list-link:focus {
+  background-color: var(--accent-color);
+}
+.footer-social-list-icon {
+  fill: var(--hero-color);
+}
 
 .visually-hidden {
   position: absolute;
@@ -434,6 +460,12 @@ border-radius: 4px;
 }
 
 /* Стили для портфолио */
+.filter {
+  display: flex;
+  column-gap: 8px;
+  justify-content: center;
+  margin-bottom: 50px;
+}
 .secondary-btn {
   border: none;
   border-radius: 4px;
@@ -466,19 +498,17 @@ border-radius: 4px;
   font-size: 16px;
   line-height: 1.88;
 }
-.filter {
-  display: flex;
-  column-gap: 8px;
-  justify-content: center;
-  margin-bottom: 50px;
-}
 .portfolio-list {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
 }
-.portfolio-list .item {
+.portfolio-item {
+  display: flex;
   width: 370px;
+}
+.portfolio-item .link {
+  width: 100%;
 }
 .test-container {
   max-width: 370px;
@@ -490,4 +520,9 @@ border-radius: 4px;
 }
 .test-container .text {
   color: var(--primary-text-color);
+}
+.portfolio-item .link:hover,
+.portfolio-item .link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }

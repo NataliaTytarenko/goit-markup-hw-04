@@ -330,7 +330,7 @@ body {
 }
 /* Client */
 .section-client-title {
-  padding-bottom: 50px;
+  margin-bottom: 50px;
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
